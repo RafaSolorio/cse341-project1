@@ -1,5 +1,6 @@
-const myFunction = (req, res, next) =>{
-    res.json('Dylan Solorio');
+// Displays name when home route is requested
+const displayName = (req, res, next) =>{
+    res.send('Dylan Solorio');
 };
 
-module.exports = { myFunction };
+module.exports = { displayName };
