@@ -23,7 +23,6 @@ const getContactById = async (req, res, next) => {
     //if (!course) res.status(404).send('Not found');
     //res.send(course);
     const contactId = new ObjectId(req.params.id);
-    console.log(req.params.id)
     const result = await mongodb.getDb().db().collection('contacts').find({ _id: contactId });
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
