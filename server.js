@@ -7,14 +7,19 @@ const contactRoutes = require('./routes/contacts')
 const port = process.env.PORT || 3000
 const app = express()
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 //app.use('/', require('./routes'));
-app.use(bodyParser.json())
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+    .use(bodyParser.json())
     .use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*')
         next()
     })
     .use('/', require('./routes')) //// works withouth index?
-    .use('/contacts', contactRoutes)
+    //.use('/contacts', contactRoutes)
 //.use('/contacts/:name', contactRoutes);
 
 mongodb.initDb((err, mongodb) => {
