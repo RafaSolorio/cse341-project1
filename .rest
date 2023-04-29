@@ -4,15 +4,13 @@ GET http://localhost:3000 HTTP/1.1
 
 GET https://cse341-project1.onrender.com HTTP/1.1
 
-
 ###
 GET http://localhost:3000/contacts HTTP/1.1
 ###
 GET http://localhost:3000/contacts/644759428fc55c9b0016ecd5
 ###
 GET http://localhost:3000/contacts/6447587a8fc55c9b0016ecd4
-###
-GET https://cse341-project1.onrender.com/contacts HTTP/1.1
+
 ###
 GET https://cse341-project1.onrender.com/contacts/644759428fc55c9b0016ecd5
 
@@ -44,6 +42,9 @@ Content-Type: application/json
 DELETE http://localhost:3000/contacts/6449fae4fa10451e5345bf9d
 
 // RENDER Deploy
+
+###
+GET https://cse341-project1.onrender.com/contacts HTTP/1.1
 
 ### Create contact
 POST https://cse341-project1.onrender.com/contacts HTTP/1.1
